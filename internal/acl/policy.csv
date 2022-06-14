@@ -1,0 +1,23 @@
+p, user, change_email, PUT
+p, user, change_password, PUT
+p, user, profile, GET
+p, user, profile_update, PUT
+p, user, vacancy_get, GET
+
+p, hr, change_email, PUT
+p, hr, change_password, PUT
+p, hr, profile, GET
+p, hr, profile_update, PUT
+p, hr, vacancy_create, POST
+p, hr, vacancy_get, GET
+p, hr, vacancy_update, PUT
+p, hr, vacancy_delete, DELETE
+
+p, admin, change_email, PUT
+p, admin, change_password, PUT
+p, admin, profile, GET
+p, admin, profile_update, PUT
+p, admin, profile_admin_roles, PUT
+p, admin, vacancy_get, GET
+p, admin, vacancy_update, PUT
+p, admin, vacancy_delete, DELETE
