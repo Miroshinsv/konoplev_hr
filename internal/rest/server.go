@@ -47,7 +47,7 @@ func NewRestServer(cfg config.REST, authService *auth.Service, aclService *acl.S
 	}
 
 	return &http.Server{
-		Addr:         os.Getenv("PORT"),
+		Addr:         fmt.Sprintf(":%s", os.Getenv("PORT")),
 		Handler:      response.ConfigureCorsHandler(handler),
 		WriteTimeout: cfg.WriteTimeout,
 		ReadTimeout:  cfg.ReadTimeout,
