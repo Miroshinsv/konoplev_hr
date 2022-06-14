@@ -30,7 +30,7 @@ func NewVacancyHandler(vs vacancyService, as authService) *Vacancy {
 func (h *Vacancy) EnrichRoutes(baseRouter *mux.Router) {
 	profileRoutes := baseRouter.PathPrefix("/vacancy").Subrouter()
 	profileRoutes.HandleFunc("", h.createAction).Methods(http.MethodPost).Name("vacancy_create")
-	profileRoutes.HandleFunc("/{id}", h.getAction).Methods(http.MethodGet).Name("vacancy_get")
+	profileRoutes.HandleFunc("/{id}", h.getAction).Methods(http.MethodGet).Name("public_vacancy_get")
 	profileRoutes.HandleFunc("/{id}", h.updateAction).Methods(http.MethodPut).Name("vacancy_update")
 	profileRoutes.HandleFunc("/{id}", h.deleteAction).Methods(http.MethodDelete).Name("vacancy_delete")
 }
