@@ -3,6 +3,7 @@ package rest
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
 
@@ -46,7 +47,7 @@ func NewRestServer(cfg config.REST, authService *auth.Service, aclService *acl.S
 	}
 
 	return &http.Server{
-		Addr:         cfg.Listen,
+		Addr:         os.Getenv("PORT"),
 		Handler:      response.ConfigureCorsHandler(handler),
 		WriteTimeout: cfg.WriteTimeout,
 		ReadTimeout:  cfg.ReadTimeout,
